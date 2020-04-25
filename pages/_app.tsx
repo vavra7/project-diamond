@@ -1,0 +1,21 @@
+import App from 'next/app';
+import Head from 'next/head';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class ProjectDiamondApp extends App {
+	public render() {
+		const { Component, pageProps } = this.props;
+
+		return (
+			<>
+				<Head>
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				</Head>
+
+				<Component {...pageProps} />
+			</>
+		);
+	}
+}
+
+export default ProjectDiamondApp;
