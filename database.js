@@ -12,8 +12,8 @@ const sqlite3 = require('sqlite3');
 		force: true
 	});
 
-	const people = await db.all('SELECT * FROM person');
-	console.log(people);
+	const test = await db.all('SELECT * FROM trading_instruments_daily');
+	console.log(test);
 
 	await db.close();
 })();

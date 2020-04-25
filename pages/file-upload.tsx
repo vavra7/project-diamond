@@ -13,14 +13,10 @@ function FileUpload() {
 		if (fileList?.length) {
 			const reader = new FileReader();
 			reader.onload = e => {
-				console.log('loaded -> sending...');
-
 				const url = 'http://localhost:3000/api/file-upload';
-				const formData = { file: e.target?.result };
+				const body = { file: e.target?.result };
 
-				return axiois.post(url, formData).then(res => {
-					console.log(res)
-				})
+				return axiois.post(url, body);
 			};
 
 			reader.readAsDataURL(fileList[0]);

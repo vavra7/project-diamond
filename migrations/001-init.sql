@@ -1,42 +1,26 @@
 -- Up
-CREATE TABLE person (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name TEXT,
-	email TEXT
-);
-
-CREATE TABLE vehicle (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	brand TEXT,
-	model TEXT,
-	ownerId INTEGER REFERENCES person(id)
+CREATE TABLE trading_instruments_daily (
+	ticker CHAR(6),
+	date DATE,
+	open DECIMAL(18, 4),
+	high DECIMAL(18, 4),
+	low DECIMAL(18, 4),
+	close DECIMAL(18, 4),
+	volume INTEGER
 );
 
 INSERT INTO
-	person (name, email)
+	trading_instruments_daily (ticker, date, open, high, low, close, volume)
 VALUES
-	('bruno', 'bruno@antunes.pt');
-
-INSERT INTO
-	person (name, email)
-VALUES
-	('jack', 'jack@antunes.pt');
-
-INSERT INTO
-	vehicle (brand, model, ownerId)
-VALUES
-	('audi', 'R8', 1);
-
-INSERT INTO
-	vehicle (brand, model, ownerId)
-VALUES
-	('audi', 'R6', 1);
-
-INSERT INTO
-	vehicle (brand, model, ownerId)
-VALUES
-	('mercedes', 'benz', 2);
+	(
+		'AAPL.US',
+		substr('19840907', 1, 4) || '-' || substr('19840907', 5, 2) || '-' || substr('19840907', 7, 2),
+		0.41045,
+		0.41045,
+		0.42657,
+		0.39559,
+		23979532
+	);
 
 -- Down
-DROP TABLE person;
-DROP TABLE vehicle;
+DROP TABLE trading_instruments_daily;
