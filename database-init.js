@@ -9,10 +9,10 @@ const sqlite3 = require('sqlite3');
 
 	await db.migrate({
 		migrationsPath: './migrations',
-		force: true
+		force: false
 	});
 
-	const test = await db.all('SELECT * FROM trading_instruments_daily');
+	const test = await db.get('SELECT * FROM markets_day');
 	console.log(test);
 
 	await db.close();

@@ -3,10 +3,16 @@ import Link from 'next/link';
 function LandingPage() {
 	return (
 		<>
-			<h1>asdfsadf</h1>
-			<div>něco</div>
+			<h1>Index</h1>
 
-			<Link href="/[ticker]" as="/aapl">
+			<Link href="/file-upload">
+				<a>file upload</a>
+			</Link>
+
+			<br />
+			<br />
+
+			<Link href="/ticker/[ticker]" as="/ticker/aapl">
 				<a>[ticker]</a>
 			</Link>
 		</>
