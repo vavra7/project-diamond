@@ -1,20 +1,25 @@
 import Link from 'next/link';
+import Layout1 from '../components/layouts/Layout1';
 
 function LandingPage() {
 	return (
 		<>
-			<h1>Index</h1>
+			<Layout1>
+				<h1>Index</h1>
 
-			<Link href="/file-upload">
-				<a>file upload</a>
-			</Link>
+				<div>asdf</div>
 
-			<br />
-			<br />
+				<Link href="/file-upload">
+					<a>file upload</a>
+				</Link>
 
-			<Link href="/ticker/[ticker]" as="/ticker/aapl">
-				<a>[ticker]</a>
-			</Link>
+				<br />
+				<br />
+
+				<Link href="/ticker/[ticker]" as="/ticker/aapl">
+					<a>[ticker]</a>
+				</Link>
+			</Layout1>
 		</>
 	);
 }

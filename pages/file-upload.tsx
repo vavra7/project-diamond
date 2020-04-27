@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import { Navbar, Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import Layout1 from '../components/layouts/Layout1';
 import axiois from 'axios';
 
 function FileUpload() {
@@ -32,14 +33,10 @@ function FileUpload() {
 	};
 
 	return (
-		<>
+		<Layout1>
 			<Head>
 				<title>File Upload</title>
 			</Head>
-
-			<Navbar bg="dark" variant="dark">
-				<Navbar.Brand>PROJECT DIAMOND</Navbar.Brand>
-			</Navbar>
 
 			<Container className="mt-3">
 				<Row>
@@ -59,7 +56,7 @@ function FileUpload() {
 					</Col>
 				</Row>
 			</Container>
-		</>
+		</Layout1>
 	);
 }
 
