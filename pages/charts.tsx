@@ -1,41 +1,37 @@
 import Layout1 from '../components/layouts/Layout1';
-import {
-	VictoryChart,
-	VictoryTheme,
-	VictoryZoomContainer,
-	VictoryBrushContainer,
-	VictoryScatter,
-	VictoryLine,
-	VictoryAxis,
-	DomainPropType,
-	DomainTuple
-} from 'victory';
+import { VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'victory';
 import { Component } from 'react';
 import axios from 'axios';
-import moment, { Moment } from 'moment';
+import moment from 'moment';
 
-interface ChartDomain {
+interface Domain {
 	x: [number, number];
 	y: [number, number];
 }
 
-interface DataSetItem {
+interface DataItem {
 	x: number;
 	y: number;
 }
 
+interface InitDataItem {
+	date: string;
+	open: number;
+	close: number;
+}
+
 interface Props {
-	dataSet: object[];
+	dataSet: InitDataItem[];
 }
 
 interface State {
-	zoomDomain: ChartDomain;
+	zoomDomain: Domain;
 }
 
 class Charts extends Component<Props, State> {
 	private width: number;
-	private entireDomain: ChartDomain;
-	private entireDataSet: DataSetItem[];
+	private entireDomain: Domain;
+	private entireDataSet: DataItem[];
 
 	/**
 	 * Initial props
@@ -44,7 +40,7 @@ class Charts extends Component<Props, State> {
 		const res = await axios.get('http://localhost:3000/api/ticker/BA.US');
 
 		return {
-			dataSet: res.data.marketData.filter((item, index) => index < 1000000)
+			dataSet: res.data.marketData.filter((item: object, index: number) => index < 1000000)
 		};
 	}
 
@@ -54,7 +50,7 @@ class Charts extends Component<Props, State> {
 	public constructor(props: Props) {
 		super(props);
 
-		this.entireDataSet = this.props.dataSet.map((item: { date: Moment; close: number }) => ({
+		this.entireDataSet = this.props.dataSet.map((item: InitDataItem) => ({
 			x: moment(item.date, 'YYYY-MM-DD').valueOf(),
 			y: item.close
 		}));
@@ -63,16 +59,15 @@ class Charts extends Component<Props, State> {
 
 		this.state = {
 			zoomDomain: this.entireDomain
-			// dataSet: this.getData()
 		};
 	}
 
 	/**
 	 * Returns original domain for full data set
 	 */
-	public getEntireDomain(): ChartDomain {
-		const xValues = this.entireDataSet.map((item: DataSetItem) => item.x);
-		const yValues = this.entireDataSet.map((item: DataSetItem) => item.y);
+	public getEntireDomain(): Domain {
+		const xValues = this.entireDataSet.map((item: DataItem) => item.x);
+		const yValues = this.entireDataSet.map((item: DataItem) => item.y);
 
 		return {
 			x: [xValues[0], xValues[xValues.length - 1]],
@@ -83,21 +78,21 @@ class Charts extends Component<Props, State> {
 	/**
 	 * Callback on domain change calculating current domain
 	 */
-	public onDomainChange(domain): void {
+	public onDomainChange(domain: any): void {
 		this.setState({ zoomDomain: domain });
 	}
 
 	/**
 	 * Return reduced data set for graph render
 	 */
-	public getData(): DataSetItem[] {
-		const { zoomDomain }: { zoomDomain: ChartDomain } = this.state;
-		const chartAreaWidth: number = this.width - 150;
+	public getData(): DataItem[] {
+		const { zoomDomain }: { zoomDomain: Domain } = this.state;
+		const chartAreaWidth: number = this.width - 100;
 		let k: number;
-		let reducedData: DataSetItem[];
+		let reducedData: DataItem[];
 
 		// only visible points
-		reducedData = this.entireDataSet.filter((item: DataSetItem, index: number, arr: DataSetItem[]) => {
+		reducedData = this.entireDataSet.filter((item: DataItem, index: number, arr: DataItem[]) => {
 			switch (index) {
 				case 0:
 					return zoomDomain.x[0] <= arr[index + 1].x && item.x <= zoomDomain.x[1];
@@ -111,7 +106,7 @@ class Charts extends Component<Props, State> {
 		// reduce to maximum visible points
 		if (reducedData.length > chartAreaWidth) {
 			k = Math.ceil(reducedData.length / chartAreaWidth);
-			reducedData = reducedData.filter((item: DataSetItem, index: number) => index % k === 0);
+			reducedData = reducedData.filter((item: DataItem, index: number) => index % k === 0);
 		}
 
 		return reducedData;
@@ -150,8 +145,6 @@ class Charts extends Component<Props, State> {
 						data={this.getData()}
 					/>
 				</VictoryChart>
-
-				{/* <pre>{JSON.stringify(this.state.dataSet, null, 2)}</pre> */}
 			</Layout1>
 		);
 	}

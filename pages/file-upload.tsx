@@ -55,6 +55,10 @@ function FileUpload() {
 						<Button onClick={onSend}>Send</Button>
 					</Col>
 				</Row>
+
+				<Row>
+					<Col className="mt-3">Download data on: https://stooq.com/db/h/</Col>
+				</Row>
 			</Container>
 		</Layout1>
 	);
