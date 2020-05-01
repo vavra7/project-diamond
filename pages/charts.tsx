@@ -20,15 +20,15 @@ interface InitDataItem {
 	close: number;
 }
 
-interface Props {
+interface ChartsProps {
 	dataSet: InitDataItem[];
 }
 
-interface State {
+interface ChartsState {
 	zoomDomain: Domain;
 }
 
-class Charts extends Component<Props, State> {
+class Charts extends Component<ChartsProps, ChartsState> {
 	private width: number;
 	private entireDomain: Domain;
 	private entireDataSet: DataItem[];
@@ -47,7 +47,7 @@ class Charts extends Component<Props, State> {
 	/**
 	 * Constructor
 	 */
-	public constructor(props: Props) {
+	public constructor(props: ChartsProps) {
 		super(props);
 
 		this.entireDataSet = this.props.dataSet.map((item: InitDataItem) => ({
