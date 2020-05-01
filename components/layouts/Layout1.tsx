@@ -1,35 +1,30 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import Link from 'next/link';
 
-export interface Layout1Props {
+interface Layout1Props {
 	children: React.ReactNode;
 }
 
 function Layout1({ children }: Layout1Props) {
-	const linkStyle = {
-		color: '#fff',
-		textDecoration: 'none'
-	};
-
 	return (
 		<>
 			<Navbar bg="dark" variant="dark">
 				<Navbar.Brand>
 					<Link href="/">
-						<a style={linkStyle}>PROJECT DIAMOND</a>
+						<span>PROJECT DIAMOND</span>
 					</Link>
 				</Navbar.Brand>
 
 				<Nav>
 					<Nav.Link>
 						<Link href="/charts">
-							<a style={linkStyle}>Charts</a>
+							<span>Charts</span>
 						</Link>
 					</Nav.Link>
 
 					<Nav.Link>
 						<Link href="/file-upload">
-							<a style={linkStyle}>File Upload</a>
+							<span>File Upload</span>
 						</Link>
 					</Nav.Link>
 				</Nav>

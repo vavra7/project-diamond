@@ -27,7 +27,7 @@ async function saveData(data: Array<Array<string>>) {
 	`);
 
 	data.forEach(async row => {
-		// row[2] = moment(row[2], 'YYYYMMDD').format('YYYY-MM-DD');
+		row[2] = moment(row[2], 'YYYYMMDD').format('YYYY-MM-DD');
 
 		const exist = await statement1.get(row[0], row[2]);
 
