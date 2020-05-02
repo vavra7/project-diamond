@@ -2,6 +2,7 @@ interface Props {
 	children?: React.ReactNode;
 	justifyContent?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around';
 	alignItems?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'baseline';
+	id?: string;
 	className?: string;
 	style?: object;
 }
@@ -14,7 +15,7 @@ function Row(props: Props) {
 	if (props.alignItems) classes = classes.concat(` ai-${props.alignItems}`);
 
 	return (
-		<div className={classes} style={props.style}>
+		<div id={props.id} className={classes} style={props.style}>
 			{props.children}
 		</div>
 	);

@@ -11,7 +11,7 @@ function Layout1({ children }: Layout1Props) {
 
 	return (
 		<>
-			<Container className={styles.navBar} fluid>
+			<Container id="nav-bar" className={styles.navBar} fluid>
 				<div id="brand" className="mr-3">
 					<Link href="/">
 						<a className={styles.link}>PROJECT DIAMOND</a>

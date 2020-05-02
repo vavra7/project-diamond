@@ -6,6 +6,7 @@ interface Props {
 	md?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 	lg?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 	xl?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+	id?: string;
 	className?: string;
 	style?: object;
 }
@@ -25,7 +26,7 @@ function Col(props: Props) {
 	if (props.className) classes = classes.concat(` ${props.className}`);
 
 	return (
-		<div className={classes} style={props.style}>
+		<div id={props.id} className={classes} style={props.style}>
 			{props.children}
 		</div>
 	);
