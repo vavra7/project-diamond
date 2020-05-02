@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col } from '../components/common/grid';
 import Layout1 from '../components/layouts/Layout1';
 import axiois from 'axios';
 
@@ -38,26 +38,16 @@ function FileUpload() {
 				<title>File Upload</title>
 			</Head>
 
-			<Container className="mt-3">
+			<Container>
 				<Row>
 					<Col>
-						<Form>
-							<Form.File
-								id="custom-file"
-								label={file ? file.name : 'Custom file input'}
-								onChange={onInputChange}
-								custom
-							/>
-						</Form>
-					</Col>
-
-					<Col>
-						<Button onClick={onSend}>Send</Button>
+						<input type="file" onChange={onInputChange} />
+						<button onClick={onSend}>Send</button>
 					</Col>
 				</Row>
 
 				<Row>
-					<Col className="mt-3">Download data on: https://stooq.com/db/h/</Col>
+					<Col>Download data on: https://stooq.com/db/h/</Col>
 				</Row>
 			</Container>
 		</Layout1>

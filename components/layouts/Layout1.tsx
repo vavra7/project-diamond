@@ -7,8 +7,6 @@ interface Layout1Props {
 }
 
 function Layout1({ children }: Layout1Props) {
-	console.log(styles);
-
 	return (
 		<>
 			<Container id="nav-bar" className={styles.navBar} fluid>
