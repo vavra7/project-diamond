@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 interface Props {
 	children?: React.ReactNode;
 	justifyContent?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around';
@@ -7,8 +9,8 @@ interface Props {
 	style?: object;
 }
 
-function Row(props: Props) {
-	let classes: string = 'row';
+function Row(props: Props): ReactElement {
+	let classes = 'row';
 
 	if (props.className) classes = classes.concat(` ${props.className}`);
 	if (props.justifyContent) classes = classes.concat(` jc-${props.justifyContent}`);

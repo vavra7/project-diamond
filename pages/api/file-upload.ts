@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { dbConnect } from '../../services/database';
 import moment from 'moment';
 
-async function saveData(data: Array<Array<string>>) {
+async function saveData(data: string[][]): Promise<void> {
 	const db = await dbConnect();
 	let inserted = 1;
 	let duplicate = 1;
@@ -43,10 +43,10 @@ async function saveData(data: Array<Array<string>>) {
 	await statement2.finalize();
 	await db.close();
 
-	console.log('Finished.')
+	console.log('Finished.');
 }
 
-async function FileUpload(req: NextApiRequest, res: NextApiResponse) {
+async function FileUpload(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	if (req.method !== 'POST') {
 		res.status(500).json({ message: 'Only POST requests accepted' });
 	} else {
@@ -62,7 +62,7 @@ async function FileUpload(req: NextApiRequest, res: NextApiResponse) {
 
 			rowsS = rowsS.filter(row => !!row.trim());
 
-			let rowsA = rowsS.map(row => row.split(','));
+			const rowsA = rowsS.map(row => row.split(','));
 
 			saveData(rowsA);
 

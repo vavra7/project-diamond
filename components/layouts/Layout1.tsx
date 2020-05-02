@@ -1,12 +1,13 @@
+import { ReactElement } from 'react';
 import styles from './Layout1.module.scss';
 import { Container } from '../common/grid';
 import Link from 'next/link';
 
-interface Layout1Props {
+interface Props {
 	children: React.ReactNode;
 }
 
-function Layout1({ children }: Layout1Props) {
+function Layout1({ children }: Props): ReactElement {
 	return (
 		<>
 			<Container id="nav-bar" className={styles.navBar} fluid>

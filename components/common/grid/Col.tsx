@@ -1,18 +1,22 @@
+import { ReactElement } from 'react';
+
+type Cols = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
 interface Props {
 	children?: React.ReactNode;
-	cols?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-	xs?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-	sm?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-	md?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-	lg?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-	xl?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+	cols?: Cols;
+	xs?: Cols;
+	sm?: Cols;
+	md?: Cols;
+	lg?: Cols;
+	xl?: Cols;
 	id?: string;
 	className?: string;
 	style?: object;
 }
 
-function Col(props: Props) {
-	let classes: string = '';
+function Col(props: Props): ReactElement {
+	let classes = '';
 
 	if (!props.xs) {
 		classes = classes = classes.concat(`cols-xs-${props.cols}`);

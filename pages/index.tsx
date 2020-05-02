@@ -1,8 +1,9 @@
+import { ReactElement } from 'react';
 import Link from 'next/link';
 import Layout1 from '@components/layouts/Layout1';
 import { Container, Row, Col } from '@components/common/grid';
 
-function LandingPage() {
+function LandingPage(): ReactElement {
 	return (
 		<>
 			<Layout1>

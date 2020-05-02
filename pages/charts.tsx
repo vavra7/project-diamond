@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import Layout1 from '@components/layouts/Layout1';
 import { VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'victory';
 import { Component } from 'react';
@@ -36,7 +37,7 @@ class Charts extends Component<ChartsProps, ChartsState> {
 	/**
 	 * Initial props
 	 */
-	static async getInitialProps() {
+	static async getInitialProps(): Promise<object> {
 		const res = await axios.get('http://localhost:3000/api/ticker/BA.US');
 
 		return {
@@ -78,6 +79,7 @@ class Charts extends Component<ChartsProps, ChartsState> {
 	/**
 	 * Callback on domain change calculating current domain
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public onDomainChange(domain: any): void {
 		this.setState({ zoomDomain: domain });
 	}
@@ -115,9 +117,8 @@ class Charts extends Component<ChartsProps, ChartsState> {
 	/**
 	 * Render fce
 	 */
-	public render() {
+	public render(): ReactElement {
 		const height1 = 500;
-		const height2 = 100;
 
 		return (
 			<Layout1>

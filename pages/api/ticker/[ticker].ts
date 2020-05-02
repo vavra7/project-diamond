@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { dbConnect } from '@services/database';
 
-async function getTicker(req: NextApiRequest, res: NextApiResponse) {
+async function getTicker(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	if (req.method !== 'GET') {
 		res.status(500).json({ message: 'Only GET requests accepted' });
 	} else {

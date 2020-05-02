@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 interface Props {
 	children?: React.ReactNode;
 	fluid?: boolean;
@@ -6,8 +8,8 @@ interface Props {
 	style?: object;
 }
 
-function Container(props: Props) {
-	let classes: string = '';
+function Container(props: Props): ReactElement {
+	let classes = '';
 
 	if (!props.fluid) {
 		classes = classes.concat('container');

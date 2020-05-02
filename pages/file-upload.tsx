@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import Head from 'next/head';
 import { Container, Row, Col } from '@components/common/grid';
 import Layout1 from '@components/layouts/Layout1';
-import axiois from 'axios';
+import axiois, { AxiosResponse } from 'axios';
 
-function FileUpload() {
+function FileUpload(): ReactElement {
 	const [file, setFile] = useState<File | null>(null);
 
-	const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		const fileList = e.target.files;
 
 		if (fileList && fileList.length && fileList[0]) {
@@ -15,13 +15,13 @@ function FileUpload() {
 		}
 	};
 
-	const onSend = () => {
+	const onSend = (): void => {
 		if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
 			alert('The File APIs are not fully supported by your browser. Fallback required.');
 			return;
 		} else if (file) {
 			const reader = new FileReader();
-			reader.onload = e => {
+			reader.onload = (e): Promise<AxiosResponse> => {
 				const url = 'http://localhost:3000/api/file-upload';
 				const body = { file: e.target?.result };
 
