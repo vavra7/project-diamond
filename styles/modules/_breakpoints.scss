@@ -24,27 +24,3 @@ $breakpoints-max: (
 	'lg': $xl - 1,
 	'xl': 99999px
 );
-
-/**
- * Returns input without unit.
- */
-@function remove-unit($value) {
-	@if type-of($value) == 'number' and not unitless($value) {
-		@return $value / ($value * 0 + 1);
-	}
-
-	@return $value;
-}
-
-:export {
-	XS_MIN: remove-unit(map-get($breakpoints-min, 'xs'));
-	XS_MAX: remove-unit(map-get($breakpoints-max, 'xs'));
-	SM_MIN: remove-unit(map-get($breakpoints-min, 'sm'));
-	SM_MAX: remove-unit(map-get($breakpoints-max, 'sm'));
-	MD_MIN: remove-unit(map-get($breakpoints-min, 'md'));
-	MD_MAX: remove-unit(map-get($breakpoints-max, 'md'));
-	LG_MIN: remove-unit(map-get($breakpoints-min, 'lg'));
-	LG_MAX: remove-unit(map-get($breakpoints-max, 'lg'));
-	XL_MIN: remove-unit(map-get($breakpoints-min, 'xl'));
-	XL_MAX: remove-unit(map-get($breakpoints-max, 'xl'));
-}

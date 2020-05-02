@@ -1,0 +1,27 @@
+.link {
+	color: #fff;
+	text-decoration: none;
+
+	&:hover {
+		color: rgba(255, 255, 255, 0.9);
+	}
+}
+
+.navBar {
+	background: #333;
+	color: #fff;
+	padding-top: 0.7rem;
+	padding-bottom: 0.7rem;
+	display: flex;
+}
+
+.nav {
+	display: inline-flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		padding: 0 0.5rem;
+	}
+}

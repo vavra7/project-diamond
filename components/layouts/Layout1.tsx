@@ -1,4 +1,5 @@
-import { Navbar, Nav } from 'react-bootstrap';
+import styles from './Layout1.module.scss';
+import { Container } from '../common/grid';
 import Link from 'next/link';
 
 interface Layout1Props {
@@ -6,29 +7,31 @@ interface Layout1Props {
 }
 
 function Layout1({ children }: Layout1Props) {
+	console.log(styles);
+
 	return (
 		<>
-			<Navbar bg="dark" variant="dark">
-				<Navbar.Brand>
+			<Container className={styles.navBar} fluid>
+				<div id="brand" className="mr-3">
 					<Link href="/">
-						<span>PROJECT DIAMOND</span>
+						<a className={styles.link}>PROJECT DIAMOND</a>
 					</Link>
-				</Navbar.Brand>
+				</div>
 
-				<Nav>
-					<Nav.Link>
+				<ul id="nav" className={styles.nav}>
+					<li>
 						<Link href="/charts">
-							<span>Charts</span>
+							<a className={styles.link}>Charts</a>
 						</Link>
-					</Nav.Link>
+					</li>
 
-					<Nav.Link>
+					<li>
 						<Link href="/file-upload">
-							<span>File Upload</span>
+							<a className={styles.link}>File Upload</a>
 						</Link>
-					</Nav.Link>
-				</Nav>
-			</Navbar>
+					</li>
+				</ul>
+			</Container>
 
 			{children}
 		</>
