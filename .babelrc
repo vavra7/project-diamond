@@ -12,6 +12,13 @@
 					"@styles": "./styles"
 				}
 			}
+		],
+		[
+			"console-source",
+			{
+				"segments": 2,
+				"splitSegment": "/"
+			}
 		]
 	]
 }
