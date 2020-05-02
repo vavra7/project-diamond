@@ -14,10 +14,27 @@ module.exports = {
 		}
 	},
 	plugins: ['@typescript-eslint'],
-	extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
+	extends: [
+		'plugin:react/recommended',
+		'plugin:@typescript-eslint/recommended',
+		'prettier/@typescript-eslint',
+		'plugin:prettier/recommended'
+	],
 	rules: {
 		semi: 'warn',
-		'react/react-in-jsx-scope': 'off'
+		'react/react-in-jsx-scope': 'off',
+		'react/jsx-sort-props': [
+			'warn',
+			{
+				noSortAlphabetically: true,
+				shorthandLast: true,
+				callbacksLast: true
+			}
+		],
+		'react/button-has-type': 'warn',
+		'react/no-deprecated': 'warn',
+		'react/prefer-es6-class': ['warn', 'always'],
+		'react/jsx-one-expression-per-line': ['warn', { allow: 'single-child' }]
 	},
 	overrides: [
 		{

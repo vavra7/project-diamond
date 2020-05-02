@@ -42,7 +42,9 @@ function FileUpload(): ReactElement {
 				<Row>
 					<Col>
 						<input type="file" onChange={onInputChange} />
-						<button onClick={onSend}>Send</button>
+						<button type="button" onClick={onSend}>
+							Send
+						</button>
 					</Col>
 				</Row>
 
