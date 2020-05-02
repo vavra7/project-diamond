@@ -1,6 +1,5 @@
 import App from 'next/app';
 import Head from 'next/head';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/styles.scss'
 
 class ProjectDiamondApp extends App {

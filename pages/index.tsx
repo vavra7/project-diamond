@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Layout1 from '../components/layouts/Layout1';
-import { Container, Row } from '../components/common/grid';
+import { Container, Row, Col } from '../components/common/grid';
 
 function LandingPage() {
 	return (
@@ -9,10 +9,18 @@ function LandingPage() {
 				<h1>Index</h1>
 
 				<Container>
-					<Row>
-						<div>klasdjflkůsafj</div>
-						<br></br>
-						<div>klasdjflkůsafj</div>
+					<Row style={{ background: 'blue' }}>
+						<Col style={{ background: 'yellow' }}>
+							<div>col-12</div>
+						</Col>
+					</Row>
+
+					<Row justifyContent="flex-end" alignItems="normal" style={{ height: '400px', background: 'red' }}>
+						<div style={{ minHeight: '100px', background: 'yellow', margin: '5px' }}>klasdjflkůsafj</div>
+						<div style={{ height: '100px', background: 'yellow', margin: '5px' }}>klasdjflkůsafj</div>
+						<div style={{ height: '100px', background: 'yellow', margin: '5px' }}>klasdjflkůsafj</div>
+						<Col xs={8} sm={12} style={{ minHeight: '100px', background: 'yellow' }}>Col</Col>
+						<Col cols={5} style={{ minHeight: '100px', background: 'brown' }}>Col</Col>
 					</Row>
 				</Container>
 

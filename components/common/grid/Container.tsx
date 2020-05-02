@@ -1,16 +1,25 @@
 interface Props {
 	children?: React.ReactNode;
 	fluid?: boolean;
+	className?: string;
+	style?: object;
 }
 
 function Container(props: Props) {
-	const type: string = !props.fluid ? 'container' : 'container-fluid';
+	let classes: string = '';
 
-	return <div className={type}>{props.children}</div>;
+	if (!props.fluid) {
+		classes = classes.concat('container');
+	} else {
+		classes = classes.concat('container-fluid');
+	}
+	if (props.className) classes = classes.concat(` ${props.className}`);
+
+	return (
+		<div className={classes} style={props.style}>
+			{props.children}
+		</div>
+	);
 }
-
-Container.defaultProps = {
-	fluid: false
-} as Partial<Props>;
 
 export default Container;
