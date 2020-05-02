@@ -1,6 +1,6 @@
 import App from 'next/app';
 import Head from 'next/head';
-import '../styles/styles.scss'
+import '@styles/styles.scss'
 
 class ProjectDiamondApp extends App {
 	public render() {

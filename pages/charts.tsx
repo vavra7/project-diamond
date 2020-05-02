@@ -1,4 +1,4 @@
-import Layout1 from '../components/layouts/Layout1';
+import Layout1 from '@components/layouts/Layout1';
 import { VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'victory';
 import { Component } from 'react';
 import axios from 'axios';

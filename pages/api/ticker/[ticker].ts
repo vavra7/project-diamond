@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { dbConnect } from '../../../services/database';
+import { dbConnect } from '@services/database';
 
 async function getTicker(req: NextApiRequest, res: NextApiResponse) {
 	if (req.method !== 'GET') {

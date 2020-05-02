@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import { Container, Row, Col } from '../components/common/grid';
-import Layout1 from '../components/layouts/Layout1';
+import { Container, Row, Col } from '@components/common/grid';
+import Layout1 from '@components/layouts/Layout1';
 import axiois from 'axios';
 
 function FileUpload() {
