@@ -38,6 +38,8 @@ function LandingPage(): ReactElement {
 				<br />
 				<br />
 
+				<i className="icon-youtube-square" style={{ fontSize: '100px' }}></i>
+
 				<Link href="/ticker/[ticker]" as="/ticker/aapl">
 					<a>[ticker]</a>
 				</Link>
