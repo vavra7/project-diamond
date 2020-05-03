@@ -19,6 +19,13 @@
 				"segments": 2,
 				"splitSegment": "/"
 			}
+		],
+		[
+			"react-directives",
+			{
+				"prefix": "r",
+				"pragmaType": "React"
+			}
 		]
 	]
 }
