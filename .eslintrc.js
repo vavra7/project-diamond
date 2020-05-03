@@ -15,6 +15,7 @@ module.exports = {
 	},
 	plugins: ['@typescript-eslint'],
 	extends: [
+		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
 		'prettier/@typescript-eslint',
@@ -22,6 +23,7 @@ module.exports = {
 	],
 	rules: {
 		semi: 'warn',
+		'no-undef': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-sort-props': [
 			'warn',

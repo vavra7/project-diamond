@@ -16,11 +16,14 @@
 		"baseUrl": "./",
 		"paths": {
 			"@components/*": ["./components/*"],
-			"@services/*": ["./services/*"],
+			"@enums": ["./enums"],
+			"@enums/*": ["./enums/*"],
 			"@fonts/*": ["./fonts/*"],
+			"@localization": ["./localization"],
+			"@services/*": ["./services/*"],
 			"@styles/*": ["./styles/*"]
 		}
 	},
 	"exclude": ["node_modules"],
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "services/database.js"]
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "enums/index.js"]
 }

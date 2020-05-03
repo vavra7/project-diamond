@@ -7,8 +7,10 @@
 				"root": ["./"],
 				"alias": {
 					"@components": "./components",
-					"@services": "./services",
+					"@enums": "./enums",
 					"@fonts": "./fonts",
+					"@localization": "./localization",
+					"@services": "./services",
 					"@styles": "./styles"
 				}
 			}
