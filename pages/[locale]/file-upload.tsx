@@ -1,10 +1,10 @@
-import { ReactElement, useState } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 import { Container, Row, Col } from '@components/common/grid';
 import Layout1 from '@components/layouts/Layout1';
 import axiois, { AxiosResponse } from 'axios';
 
-function FileUpload(): ReactElement {
+const FileUpload: React.FC = () => {
 	const [file, setFile] = useState<File | null>(null);
 
 	const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -54,6 +54,6 @@ function FileUpload(): ReactElement {
 			</Container>
 		</Layout1>
 	);
-}
+};
 
 export default FileUpload;

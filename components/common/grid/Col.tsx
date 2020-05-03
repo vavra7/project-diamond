@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 type Cols = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 interface Props {
@@ -15,7 +13,7 @@ interface Props {
 	style?: object;
 }
 
-function Col(props: Props): ReactElement {
+const Col: React.FC<Props> = props => {
 	let classes = '';
 
 	if (!props.xs) {
@@ -34,7 +32,7 @@ function Col(props: Props): ReactElement {
 			{props.children}
 		</div>
 	);
-}
+};
 
 Col.defaultProps = {
 	cols: 12

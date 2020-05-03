@@ -22,27 +22,29 @@ module.exports = {
 		'plugin:prettier/recommended'
 	],
 	rules: {
-		semi: 'warn',
-		'no-undef': 'off',
-		'react/react-in-jsx-scope': 'off',
+		semi: 1,
+		'no-undef': 0,
+		'react/react-in-jsx-scope': 0,
 		'react/jsx-sort-props': [
-			'warn',
+			1,
 			{
 				noSortAlphabetically: true,
 				shorthandLast: true,
 				callbacksLast: true
 			}
 		],
-		'react/button-has-type': 'warn',
-		'react/no-deprecated': 'warn',
-		'react/prefer-es6-class': ['warn', 'always'],
-		'react/jsx-one-expression-per-line': ['warn', { allow: 'single-child' }]
+		'react/button-has-type': 1,
+		'react/no-deprecated': 1,
+		'react/prefer-es6-class': [1, 'always'],
+		'react/jsx-one-expression-per-line': [1, { allow: 'single-child' }],
+		'@typescript-eslint/no-explicit-any': 0,
+		'react/prop-types': 0
 	},
 	overrides: [
 		{
 			files: ['*.js'],
 			rules: {
-				'@typescript-eslint/explicit-function-return-type': 'off'
+				'@typescript-eslint/explicit-function-return-type': 0
 			}
 		}
 	]

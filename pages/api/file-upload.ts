@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { dbConnect } from '../../services/database';
 import moment from 'moment';
 
-async function saveData(data: string[][]): Promise<void> {
+const saveData = async (data: string[][]): Promise<void> => {
 	const db = await dbConnect();
 	let inserted = 1;
 	let duplicate = 1;
@@ -44,7 +44,7 @@ async function saveData(data: string[][]): Promise<void> {
 	await db.close();
 
 	console.log('Finished.');
-}
+};
 
 async function FileUpload(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	if (req.method !== 'POST') {

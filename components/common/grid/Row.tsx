@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 interface Props {
 	children?: React.ReactNode;
 	justifyContent?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around';
@@ -9,7 +7,7 @@ interface Props {
 	style?: object;
 }
 
-function Row(props: Props): ReactElement {
+const Row: React.FC<Props> = props => {
 	let classes = 'row';
 
 	if (props.className) classes = classes.concat(` ${props.className}`);
@@ -21,6 +19,6 @@ function Row(props: Props): ReactElement {
 			{props.children}
 		</div>
 	);
-}
+};
 
 export default Row;

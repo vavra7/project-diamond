@@ -1,11 +1,10 @@
-import { ReactElement } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import '@fonts/fonts.scss';
 import '@styles/styles.scss';
 
 class ProjectDiamondApp extends App {
-	public render(): ReactElement {
+	public render(): React.ReactElement {
 		const { Component, pageProps } = this.props;
 
 		return (

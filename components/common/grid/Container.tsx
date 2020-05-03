@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 interface Props {
 	children?: React.ReactNode;
 	fluid?: boolean;
@@ -8,7 +6,7 @@ interface Props {
 	style?: object;
 }
 
-function Container(props: Props): ReactElement {
+const Container: React.FC<Props> = props => {
 	let classes = '';
 
 	if (!props.fluid) {
@@ -23,6 +21,6 @@ function Container(props: Props): ReactElement {
 			{props.children}
 		</div>
 	);
-}
+};
 
 export default Container;

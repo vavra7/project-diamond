@@ -1,7 +1,7 @@
-import { Locale } from '@enums';
+import { Locale, isLocale, LocalStorage } from '@enums';
 
 /**
- * Exports locale from browser
+ * Exports locale from browser.
  */
 export function getBrowserLocale(langOnly = false): string {
 	let locale = '';
@@ -22,7 +22,7 @@ export function getBrowserLocale(langOnly = false): string {
 }
 
 /**
- * Maps any locale into app' supported locale
+ * Maps any locale into app's supported locale.
  */
 export function mapToAppLocale(locale: string): Locale {
 	switch (locale) {
@@ -36,8 +36,14 @@ export function mapToAppLocale(locale: string): Locale {
 }
 
 /**
- * Returns default locale
+ * Returns application locale.
  */
-export function getDefaultLocale(): Locale {
-	return mapToAppLocale(getBrowserLocale(true));
+export function getAppLocale(): Locale {
+	const localSetting: string | null = globalThis?.localStorage.getItem(LocalStorage.Locale);
+
+	if (isLocale(localSetting)) {
+		return localSetting;
+	} else {
+		return mapToAppLocale(getBrowserLocale(true));
+	}
 }

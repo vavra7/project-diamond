@@ -1,17 +1,20 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRouter, NextRouter } from 'next/dist/client/router';
-import { getDefaultLocale } from '@localization';
-import { Locale } from '@enums';
+import { getAppLocale } from '@localization';
+import Head from 'next/head';
 
-function LocaleRouter(): ReactElement {
+const LocaleRouter: React.FC = () => {
 	const router: NextRouter = useRouter();
-	const locale: Locale = getDefaultLocale();
 
 	useEffect(() => {
-		router.replace('/[locale]', `/${locale}`);
+		router.replace('/[locale]', `/${getAppLocale()}`);
 	}, []);
 
-	return <div>locale router</div>;
-}
+	return (
+		<Head>
+			<meta name="robots" content="noindex, nofollow" />
+		</Head>
+	);
+};
 
 export default LocaleRouter;

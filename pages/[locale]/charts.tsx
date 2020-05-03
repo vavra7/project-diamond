@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import Layout1 from '@components/layouts/Layout1';
 import { VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'victory';
 import { Component } from 'react';
@@ -117,7 +116,7 @@ class Charts extends Component<ChartsProps, ChartsState> {
 	/**
 	 * Render fce
 	 */
-	public render(): ReactElement {
+	public render(): React.ReactElement {
 		const height1 = 500;
 
 		return (

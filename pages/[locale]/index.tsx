@@ -1,9 +1,8 @@
-import { ReactElement } from 'react';
 import Link from 'next/link';
 import Layout1 from '@components/layouts/Layout1';
 import { Container, Row, Col } from '@components/common/grid';
 
-function LandingPage(): ReactElement {
+const LandingPage: React.FC = () => {
 	return (
 		<>
 			<Layout1>
@@ -46,6 +45,6 @@ function LandingPage(): ReactElement {
 			</Layout1>
 		</>
 	);
-}
+};
 
 export default LandingPage;

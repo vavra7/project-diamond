@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import styles from './Layout1.module.scss';
 import { Container } from '../common/grid';
 import Link from 'next/link';
@@ -7,7 +6,7 @@ interface Props {
 	children: React.ReactNode;
 }
 
-function Layout1({ children }: Props): ReactElement {
+const Layout1: React.FC<Props> = props => {
 	return (
 		<>
 			<Container id="nav-bar" className={styles.navBar} fluid>
@@ -32,9 +31,9 @@ function Layout1({ children }: Props): ReactElement {
 				</ul>
 			</Container>
 
-			{children}
+			{props.children}
 		</>
 	);
-}
+};
 
 export default Layout1;
