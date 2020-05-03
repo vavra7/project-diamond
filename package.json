@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "node database-init.js && next dev",
-		"lint": "eslint '*/**/*.{js,ts,tsx}'"
+		"lint": "eslint '*/**/*.{js,ts,tsx}'",
+		"debug": "NODE_OPTIONS='--inspect' next"
 	},
 	"dependencies": {
 		"axios": "^0.19.2",

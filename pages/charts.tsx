@@ -3,7 +3,7 @@ import Layout1 from '@components/layouts/Layout1';
 import { VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'victory';
 import { Component } from 'react';
 import axios from 'axios';
-import moment from 'moment';
+import moment from 'moment/moment';
 
 interface Domain {
 	x: [number, number];
