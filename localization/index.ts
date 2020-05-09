@@ -37,6 +37,7 @@ export function mapToAppLocale(locale: string): Locale {
 
 /**
  * Returns application locale.
+ * For use on client side.
  */
 export function getAppLocale(): Locale {
 	const localSetting: string | null = globalThis?.localStorage.getItem(LocalStorage.Locale);

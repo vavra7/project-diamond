@@ -5,7 +5,7 @@ $content-widths: (
 	$xl: $xl-content-width
 );
 
-$grid-gutter: 1rem * 2;
+$grid-gutter: 15px * 2;
 $grid-columns: 12;
 
 // Containers
@@ -38,8 +38,9 @@ $grid-columns: 12;
 }
 
 // Columns
-[class^='cols-'],
-[class*=' cols-'] {
+[class^='col-'],
+[class*=' col-'],
+.col {
 	position: relative;
 	box-sizing: border-box;
 	padding: $grid-gutter / 2;
@@ -49,7 +50,7 @@ $grid-columns: 12;
 @each $breakpoint, $width in $breakpoints-min {
 	@media (min-width: $width) {
 		@for $i from 1 through $grid-columns {
-			.cols-#{$breakpoint}-#{$i} {
+			.col-#{$breakpoint}-#{$i} {
 				width: percentage($i / $grid-columns);
 			}
 		}
@@ -59,8 +60,8 @@ $grid-columns: 12;
 // Offsets
 @each $breakpoint, $width in $breakpoints-min {
 	@media (min-width: $width) {
-		@for $i from 1 through $grid-columns {
-			.cols-#{$breakpoint}-offset-#{$i} {
+		@for $i from 0 through $grid-columns {
+			.col-#{$breakpoint}-offset-#{$i} {
 				margin-left: percentage($i / $grid-columns);
 			}
 		}

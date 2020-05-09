@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Layout1 from '@components/layouts/Layout1';
 import { Container, Row, Col } from '@components/common/grid';
+import withLocale from '@components/localization/withLocale';
 
 const LandingPage: React.FC = () => {
 	return (
@@ -47,4 +48,4 @@ const LandingPage: React.FC = () => {
 	);
 };
 
-export default LandingPage;
+export default withLocale(LandingPage);

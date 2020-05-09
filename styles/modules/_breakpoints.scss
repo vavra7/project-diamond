@@ -4,10 +4,10 @@ $md: 960px;
 $lg: 1210px;
 $xl: 1500px;
 
-$sm-content-width: 560px;
-$md-content-width: 910px;
-$lg-content-width: 1150px;
-$xl-content-width: 1430px;
+$sm-content-width: $sm - 40;
+$md-content-width: $md - 50;
+$lg-content-width: $lg - 60;
+$xl-content-width: $xl - 70;
 
 $breakpoints-min: (
 	'xs': $xs,

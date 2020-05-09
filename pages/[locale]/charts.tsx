@@ -3,6 +3,7 @@ import { VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'v
 import { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment/moment';
+import withLocale from '@components/localization/withLocale';
 
 interface Domain {
 	x: [number, number];
@@ -150,4 +151,4 @@ class Charts extends Component<ChartsProps, ChartsState> {
 	}
 }
 
-export default Charts;
+export default withLocale(Charts);

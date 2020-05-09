@@ -16,10 +16,12 @@
 		"baseUrl": "./",
 		"paths": {
 			"@components/*": ["./components/*"],
+			"@context/*": ["./context/*"],
 			"@enums": ["./enums"],
 			"@enums/*": ["./enums/*"],
 			"@fonts/*": ["./fonts/*"],
 			"@localization": ["./localization"],
+			"@localization/*": ["./localization/*"],
 			"@services/*": ["./services/*"],
 			"@styles/*": ["./styles/*"]
 		}

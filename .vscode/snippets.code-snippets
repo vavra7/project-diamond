@@ -2,15 +2,14 @@
 	"React Function Component": {
 		"prefix": "rfc",
 		"body": [
-			"import { ReactElement } from 'react';",
-			"",
-			"function ${1:${TM_FILENAME_BASE}}($2): ReactElement {",
+			"const ${1:${TM_FILENAME_BASE}}: React.FC = ($2) => {",
 			"  return (",
 			"    <$3>$0</$3>",
 			"  );",
-			"}",
+			"};",
 			"",
-			"export default ${1:${TM_FILENAME_BASE}};"
+			"export default ${1:${TM_FILENAME_BASE}};",
+			""
 		],
 		"description": "React Function Component"
 	},
@@ -27,5 +26,12 @@
 			"import ${2:something} from '$1';",
 		],
 		"description": "Import"
+	},
+	"Preview JSON": {
+		"prefix": "pre",
+		"body": [
+			"<pre>{JSON.stringify(${1:object}, null, 2)}</pre>"
+		],
+		"description": "Preview JSON"
 	}
 }

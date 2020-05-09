@@ -38,7 +38,9 @@ module.exports = {
 		'react/prefer-es6-class': [1, 'always'],
 		'react/jsx-one-expression-per-line': [1, { allow: 'single-child' }],
 		'@typescript-eslint/no-explicit-any': 0,
-		'react/prop-types': 0
+		'react/prop-types': 0,
+		'newline-after-var': [1, 'always'],
+		'newline-before-return': 1
 	},
 	overrides: [
 		{

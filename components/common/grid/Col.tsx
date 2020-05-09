@@ -17,14 +17,14 @@ const Col: React.FC<Props> = props => {
 	let classes = '';
 
 	if (!props.xs) {
-		classes = classes = classes.concat(`cols-xs-${props.cols}`);
+		classes = classes = classes.concat(`col-xs-${props.cols}`);
 	} else {
-		classes = classes = classes.concat(`cols-xs-${props.xs}`);
+		classes = classes = classes.concat(`col-xs-${props.xs}`);
 	}
-	if (props.sm) classes = classes.concat(` cols-sm-${props.sm}`);
-	if (props.md) classes = classes.concat(` cols-md-${props.md}`);
-	if (props.lg) classes = classes.concat(` cols-lg-${props.lg}`);
-	if (props.xl) classes = classes.concat(` cols-xl-${props.xl}`);
+	if (props.sm) classes = classes.concat(` col-sm-${props.sm}`);
+	if (props.md) classes = classes.concat(` col-md-${props.md}`);
+	if (props.lg) classes = classes.concat(` col-lg-${props.lg}`);
+	if (props.xl) classes = classes.concat(` col-xl-${props.xl}`);
 	if (props.className) classes = classes.concat(` ${props.className}`);
 
 	return (

@@ -1,4 +1,4 @@
-$base-size: 1rem;
+$base-size: 15px;
 
 $spaces: (
 	0: $base-size * 0,
@@ -47,5 +47,10 @@ $spaces: (
 	.px-#{$space} {
 		padding-left: $size;
 		padding-right: $size;
+	}
+
+	.py-#{$space} {
+		padding-top: $size;
+		padding-bottom: $size;
 	}
 }
