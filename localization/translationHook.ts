@@ -6,7 +6,7 @@ import { Locale, isLocale } from '@enums';
 
 interface TranslationHook {
 	locale: string;
-	t: (path: string, args?: string | string[] | undefined, toLocale?: Locale | undefined) => string;
+	t(path: string, args?: string | string[] | undefined, toLocale?: Locale | undefined): string;
 }
 
 const translations = {
@@ -17,15 +17,11 @@ const translations = {
 export const useTranslation = (): TranslationHook => {
 	const { locale } = useContext(LocaleContext);
 
-	function t(
-		path: string,
-		args: string | string[] | undefined = undefined,
-		toLocale: undefined | Locale = undefined
-	): string {
+	const t: TranslationHook['t'] = function (path, args, toLocale) {
 		let localeTranslations: object;
 
 		if (args) {
-			console.warn('TODO: args are non implemented');
+			console.warn('TODO: args are not implemented');
 		}
 
 		if (isLocale(toLocale)) {
@@ -45,7 +41,7 @@ export const useTranslation = (): TranslationHook => {
 
 			return path;
 		}
-	}
+	};
 
 	return { locale, t };
 };

@@ -18,9 +18,9 @@ const LocaleSwitcher: React.FC = () => {
 
 	return (
 		<select value={locale} onChange={handleChange}>
-			{Object.values(Locale).map((item, index) => (
+			{Object.values(Locale).map((item: Locale, index: number) => (
 				<option key={index} value={item}>
-					{t(`enums.locale.${item}`, undefined, item as Locale)}
+					{t(`enums.locale.${item}`, undefined, item)}
 				</option>
 			))}
 		</select>
