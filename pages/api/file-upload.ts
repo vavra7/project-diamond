@@ -48,7 +48,7 @@ const saveData = async (data: string[][]): Promise<void> => {
 
 async function FileUpload(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	if (req.method !== 'POST') {
-		res.status(500).json({ message: 'Only POST requests accepted' });
+		res.status(405).json({ message: `Method ${req.method} is not allowed.` });
 	} else {
 		if (req.body.file) {
 			const base64str = req.body.file.split(',').pop();

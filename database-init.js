@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { open } = require('sqlite');
 const sqlite3 = require('sqlite3');
 
@@ -13,6 +14,7 @@ const sqlite3 = require('sqlite3');
 	});
 
 	const test = await db.get('SELECT * FROM markets_day');
+
 	console.log(test);
 
 	await db.close();
