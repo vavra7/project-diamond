@@ -14,13 +14,10 @@ interface Props {
 }
 
 const Col: React.FC<Props> = props => {
-	let classes = '';
+	let classes = 'col';
 
-	if (!props.xs) {
-		classes = classes = classes.concat(`col-xs-${props.cols}`);
-	} else {
-		classes = classes = classes.concat(`col-xs-${props.xs}`);
-	}
+	if (props.cols && !props.xs) classes = classes = classes.concat(` col-xs-${props.cols}`);
+	if (props.xs) classes = classes = classes.concat(` col-xs-${props.xs}`);
 	if (props.sm) classes = classes.concat(` col-sm-${props.sm}`);
 	if (props.md) classes = classes.concat(` col-md-${props.md}`);
 	if (props.lg) classes = classes.concat(` col-lg-${props.lg}`);
@@ -33,9 +30,5 @@ const Col: React.FC<Props> = props => {
 		</div>
 	);
 };
-
-Col.defaultProps = {
-	cols: 12
-} as Partial<Props>;
 
 export default Col;

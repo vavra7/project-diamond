@@ -22,6 +22,12 @@ const Layout1: React.FC<Props> = props => {
 
 				<ul id="nav" className={styles.nav}>
 					<li>
+						<Link href="/[locale]/login" as={`/${locale}/login`}>
+							<a className={styles.link}>Login</a>
+						</Link>
+					</li>
+
+					<li>
 						<Link href="/[locale]/charts" as={`/${locale}/charts`}>
 							<a className={styles.link}>Charts</a>
 						</Link>
