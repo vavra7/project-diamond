@@ -3,7 +3,7 @@ import { Container, Row, Col } from '@components/common/grid';
 import { useState } from 'react';
 import axios from 'axios';
 
-const login: React.FC = () => {
+const Login: React.FC = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState({});
@@ -62,4 +62,4 @@ const login: React.FC = () => {
 	);
 };
 
-export default login;
+export default Login;
